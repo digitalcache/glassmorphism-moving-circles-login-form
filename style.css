@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: gillBold;
+    src: url(./fonts/GillSansBold.otf);
+}
+@font-face {
+    font-family: gillMedium;
+    src: url(./fonts/GillSansMedium.otf);
+}
+@font-face {
+    font-family: gillLight;
+    src: url(./fonts/GillSansLight.otf);
+}
+body {
+    overflow: hidden;
+
+}
+section {
+    width: 100%;
+    height: 112vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: rgb(80,167,194);
+    /* background: linear-gradient(133deg, rgba(80,167,194,1) 0%, rgba(183,248,219,1) 100%); */
+    background: url(./images/space.jpg.jpg);
+    background-size: cover;
+    background-position-x: 46%;
+}
+section .overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10;
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+form{
+    position: relative;
+    width: 300px;
+    height: 320px;
+    padding: 35px 0;
+}
+form::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 8px;
+    background-clip: padding-box;
+
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1); 
+
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+@media screen and (max-width: 768px) {
+    form::before{
+        border-radius: 12px;
+
+    }
+}
+form .formName {
+    position: relative;
+    z-index: 2;
+    font-family: gillMedium;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    color: white;
+    font-size: 24px;
+
+}
+
+form .ruler {
+    background: white;
+    height: 2px;
+    width: 50px;
+    z-index: 2;
+    position: relative;
+    margin-left: 20px;
+    margin-top:6px;
+}
+
+form input {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    margin-left: 20px;
+    font-family: gillLight;
+    color:white;
+    margin-top:30px;
+    padding: 8px;
+    padding-left: 15px;
+    border-radius: 5rem;
+    letter-spacing: 0.5px;
+    border:none;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 65px rgba(0, 0, 0, 0.1); 
+    outline: none;
+}
+input:last-of-type {
+    margin-top:20px;
+}
+form input::placeholder{
+    letter-spacing: 1px;
+    font-family: gillMedium;
+    color: rgba(255, 255, 255, 0.8);
+}
+form button {
+    z-index: 2;
+    position: relative;
+    margin-left: 20px;
+    margin-top:20px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    font-family: gillMedium;
+    border-radius: 50px;
+}
+form button:hover {
+    cursor: pointer;
+}
+p {
+    position: relative;
+    z-index: 2;
+    margin-left: 20px;
+    margin-top:20px;
+    font-family: gillMedium;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+
+}
+p a {
+    color: rgba(255, 255, 255, 0.8);
+
+}
+p:last-of-type {
+    margin-top: 5px;
+}
+section .box1 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    border-radius: 8px;
+    left:50%;
+    top:50%;
+    transform: translate(-275%, -20%);
+    box-shadow: 0 5px 55px rgba(0, 0, 0, 0.3); 
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.1);
+    animation: boxAnimation1 3s linear 0s infinite alternate;
+
+}
+@media screen and (max-width: 768px) {
+    section .box1 {
+        width: 40px;
+        height: 40px;
+        transform: translateX(-450%);
+        border-radius: 4px;
+    }
+}
+@keyframes boxAnimation1 {
+    from {top: 45%;}
+    to {top: 55%;}
+}
+section .box2 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    border-radius: 8px;
+    left:50%;
+    top:50%;
+    transform: translate(240%, 100%);
+    box-shadow: 0 5px 55px rgba(0, 0, 0, 0.3); 
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.1);
+    animation: boxAnimation2 2s linear 2s infinite alternate;
+
+}
+@media screen and (max-width: 768px) {
+    section .box2 {
+        width: 30px;
+        height: 30px;
+        left:68%;
+        border-radius: 4px;
+    }
+}
+@keyframes boxAnimation2 {
+    from {transform: translate(240%,100%);}
+    to {transform: translate(240%,50%);}
+}
+section .box3 {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 0;
+    border-radius: 8px;
+    left:50%;
+    top:50%;
+    transform: translate(200%, -250%);
+    box-shadow: 0 5px 55px rgba(0, 0, 0, 0.3); 
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.1);
+    animation: boxAnimation3 3s linear 0s infinite alternate;
+    
+}
+
+@keyframes boxAnimation3 {
+    from {transform: translate(200%,-250%);}
+    to {transform: translate(200%,-320%);}
+}
+@media screen and (max-width: 768px) {
+    section .box3 {
+        width: 30px;
+        height: 30px;
+        left:70%;
+        border-radius: 4px;
+    }
+    @keyframes boxAnimation3 {
+        from {top: 40%}
+        to {top: 30%}
+    }
+}
+section .box4 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    border-radius: 8px;
+    left:50%;
+    top:50%;
+    transform: translate(0%,-450%);
+    box-shadow: 0 5px 55px rgba(0, 0, 0, 0.3); 
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.1);
+    animation: boxAnimation4 2s linear 0s infinite alternate;
+
+}
+
+@keyframes boxAnimation4 {
+    from {transform: translate(0%,-450%);}
+    to {transform: translate(0%,-400%);}
+}
+@media screen and (max-width: 768px) {
+    section .box4 {
+        width: 20px;
+        height: 20px;
+        transform: translateX(-350%);
+        border-radius: 4px;
+    }
+    @keyframes boxAnimation4 {
+        from {top: 20%}
+        to {top: 24%}
+    }
+}
+
+section .sphere1 {
+    width: 200px;
+    height: 200px;
+    
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    left:55%;
+    top:50%;
+    box-shadow: inset -15px -15px 40px rgba(255,255,255, .1);
+    border: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    background: rgba(255,255,255,0.01);
+    animation: sphereAnimation1 4s  cubic-bezier(0.1, 0.7, 1.0, 0.1) 0s infinite alternate;
+}
+@media screen and (max-width: 768px) {
+    section .sphere1 {
+        display: none;
+    }
+}
+
+@keyframes sphereAnimation1 {
+    from {left: 55%; top: 60%}
+    to {left: 30%; top:10%}
+}
